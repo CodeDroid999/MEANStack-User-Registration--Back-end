@@ -1,7 +1,6 @@
-//request mongoose
 const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
 
-//user schems
 var userSchema = new mongoose.Schema({
     fullName: {
         type: String,
@@ -20,5 +19,21 @@ var userSchema = new mongoose.Schema({
     saltSecret: String
 });
 
-//saving the data to mongoose
+// Custom validation for email
+userSchema.path('email').validate((val) => {
+    emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return emailRegex.test(val);
+}, 'Invalid e-mail.');
+
+// Events
+userSchema.pre('save', function (next) {
+    bcrypt.genSalt(10, (err, salt) => {
+        bcrypt.hash(this.password, salt, (err, hash) => {
+            this.password = hash;
+            this.saltSecret = salt;
+            next();
+        });
+    });
+});
+
 mongoose.model('User', userSchema);

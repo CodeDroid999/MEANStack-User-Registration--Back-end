@@ -9,3 +9,6 @@ mongoose.connect(process.env.MONGODB_URI, (err) => {
 
 //import  models
 require('./user.model');
+
+const mongoose = require('mongoose');
+
