@@ -1,5 +1,4 @@
-//request mongoose
-const mongoose = require('mongoose');
+//const mongoose = require('mongoose');
 
 //connect mongoose
 mongoose.connect(process.env.MONGODB_URI, (err) => {
