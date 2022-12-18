@@ -1,2 +1,2 @@
-require('.config/config');
-require('.models/db');
+require('./config/config');
+require('./models/db');
