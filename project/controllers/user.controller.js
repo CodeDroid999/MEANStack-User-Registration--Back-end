@@ -1,7 +1,9 @@
+//require mongoose
 const mongoose = require('mongoose');
 
 const User = mongoose.model('User');
 
+//function to hadle user requests
 module.exports.register = (req, res, next) => {
     var user = new User();
     user.fullName = req.body.fullName;
