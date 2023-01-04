@@ -10,6 +10,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
+//require routing
+const rtsIndex = require('./routes/index.router');
 
 //call express
 var app = express();
