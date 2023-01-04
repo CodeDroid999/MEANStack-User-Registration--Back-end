@@ -1,5 +1,7 @@
 //require mongoose
 const mongoose = require('mongoose');
+//require models
+require('./models/db');
 
 //establish connection
 mongoose.connect(process.env.MONGODB_URI, (err) => {    
