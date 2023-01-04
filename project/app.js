@@ -17,3 +17,6 @@ var app = express();
 // middleware
 app.use(bodyParser.json());
 app.use(cors());
+
+// start server
+app.listen(process.env.PORT, () => console.log(`Server started at port : ${process.env.PORT}`));
