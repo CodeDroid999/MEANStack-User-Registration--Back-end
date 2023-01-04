@@ -1,4 +1,7 @@
-const e = require("express");
+//require mongoose
+const mongoose = require('mongoose');
+
+const User = require("express");
 
 
 //function to handle user requests
