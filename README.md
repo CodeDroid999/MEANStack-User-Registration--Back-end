@@ -6,14 +6,16 @@ This is a MEAN Stack Demo Project to implement User Registration with password e
 
 # Features :
  - Add new user in MongoDB with Node JS
-- Password encryption
-- Validations in MEAN Stack
+- Password encryption 
+- Email Validation
+-user sign up
 
 ## Get the Code
 
 ```
 $ git clone https://github.com/CodeDroid999/MEAN-Stack-User-Registration---Back-End.git
 $ npm install
+$ node app.js
 ```
 
 
