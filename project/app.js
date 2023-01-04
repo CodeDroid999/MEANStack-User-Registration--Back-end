@@ -13,3 +13,7 @@ const cors = require('cors');
 
 //call express
 var app = express();
+
+// middleware
+app.use(bodyParser.json());
+app.use(cors());
