@@ -18,3 +18,8 @@ var userSchema = new mongoose.Schema({
     },
     saltSecret: String
 });
+
+
+
+//register user model in mongoose
+mongoose.model('User', userSchema);
