@@ -1,8 +1,7 @@
 //require mongoose
 const mongoose = require('mongoose');
 
-const User = require("express");
-
+const User = mongoose.model('User');
 
 //function to handle user requests
 module.exports.register = (req, res, next) => {
